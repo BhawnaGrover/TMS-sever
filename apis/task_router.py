@@ -97,7 +97,7 @@ def delete_existing_task(task_id: int, db: Session = Depends(get_db), current_us
     db.commit() 
     return {"message": "Task deleted successfully"}
 
-# Example: Filter tasks by priority
+# Example: Filter tasks by priority or search by keyword
 @task_router_tms.get("/tasks/search", response_model=List[TaskResponse])
 def search_tasks(
     priority: Optional[PriorityEnum] = None,
